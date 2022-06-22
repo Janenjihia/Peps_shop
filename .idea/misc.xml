@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/fragment_shopping_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_banner_slider_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_cart_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_checkout_bottom_sheet.xml" value="0.1" />
         <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.1" />
       </map>
     </option>
