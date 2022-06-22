@@ -1,4 +1,4 @@
-package com.moringaschool.peps_shop;
+package com.Hishul.peps_shop;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -53,7 +53,7 @@ public class CartItemAdapter extends RecyclerView.Adapter<CartItemAdapter.CartIt
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull CartItemViewHolder holder, int position) {
-        Product product = productList.get(position);
+        com.moringaschool.peps_shop.Product product = productList.get(position);
 
         holder.setItemData(product);
 
