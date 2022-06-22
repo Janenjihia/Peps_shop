@@ -1,64 +1,155 @@
 package com.moringaschool.peps_shop;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.Html;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link RegisterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class RegisterFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FrameLayout frameLayout;
+    private TextInputLayout mTxtLayoutPwd, mTxtLayoutConfirmPwd;
+    private TextInputEditText mEdtEmail, mEdtUserName, mEdtPwd, mEdtConfirmPwd;
+    private TextView txtHaveAccount;
+    private Button btnSignUp;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String BTN_DISABLE = "#bdc3c7";
+    private static final String BTN_ENABLE = "#EF984B";
 
-    public RegisterFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegisterFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RegisterFragment newInstance(String param1, String param2) {
-        RegisterFragment fragment = new RegisterFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public RegisterFragment(FrameLayout frameLayout) {
+        this.frameLayout = frameLayout;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
+
+        initUI(view);
+        addActionForHaveAccountEvent();
+        addActionForBtnSignUp();
+
+        addListenerForEditText(mEdtEmail);
+        addListenerForEditText(mEdtUserName);
+        addListenerForEditText(mEdtPwd);
+        addListenerForEditText(mEdtConfirmPwd);
+
+        changeEndIconStateOnFocusEditText(mEdtPwd, mTxtLayoutPwd);
+        changeEndIconStateOnFocusEditText(mEdtConfirmPwd, mTxtLayoutConfirmPwd);
+
+        return view;
+    }
+
+    private void initUI(View view) {
+        txtHaveAccount = view.findViewById(R.id.txt_have_account);
+        txtHaveAccount.append(" " + Html.fromHtml("<u>Login now!</u>"));
+
+        mEdtEmail = view.findViewById(R.id.edt_regis_email);
+        mEdtUserName = view.findViewById(R.id.edt_regis_username);
+        mEdtPwd = view.findViewById(R.id.edt_regis_pwd);
+        mEdtConfirmPwd = view.findViewById(R.id.edt_confirm_pass);
+
+        mTxtLayoutPwd = view.findViewById(R.id.textInputLayout2);
+        mTxtLayoutConfirmPwd = view.findViewById(R.id.textInputLayout3);
+
+        btnSignUp = view.findViewById(R.id.btn_signup);
+        changeButtonState(false, BTN_DISABLE);
+    }
+
+    private void addActionForHaveAccountEvent() {
+        txtHaveAccount.setOnClickListener(view1 -> {
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left)
+                    .replace(frameLayout.getId(), new LoginFragment(frameLayout)).commit();
+        });
+    }
+
+    private void addActionForBtnSignUp() {
+        btnSignUp.setOnClickListener(view1 -> {
+
+            if (!isValidRegisterAccount(mEdtUserName.getText().toString(), mEdtPwd.getText().toString(), mEdtConfirmPwd.getText().toString()))
+                return;
+
+            Intent intent = new Intent(getContext(), HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            getActivity().finish();
+        });
+    }
+
+    private void changeButtonState(boolean state, String color) {
+        btnSignUp.setEnabled(state);
+        btnSignUp.setBackgroundColor(Color.parseColor(color));
+    }
+
+    private void addListenerForEditText(TextInputEditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!mEdtEmail.getText().toString().trim().isEmpty() && !mEdtPwd.getText().toString().trim().isEmpty() && !mEdtUserName.getText().toString().trim().isEmpty()
+                        && !mEdtConfirmPwd.getText().toString().trim().isEmpty())
+                    changeButtonState(true, BTN_ENABLE);
+                else
+                    changeButtonState(false, BTN_DISABLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+    }
+
+    private void changeEndIconStateOnFocusEditText(TextInputEditText editText, TextInputLayout textInputLayout) {
+        editText.setOnFocusChangeListener((view, isFocus) -> {
+            textInputLayout.setEndIconActivated(isFocus);
+        });
+    }
+
+    private boolean isValidRegisterAccount(String userName, String password, String confirmPassword) {
+        if (!userName.matches("[a-zA-Z0-9]{8,}")) {
+            mEdtUserName.setError("Must have at least 8 characters and only contain alphabet characters or number!");
+            mEdtUserName.requestFocus();
+            return false;
+        }
+
+        if (password == null || password.isEmpty()) {
+            mEdtPwd.setError("Password can't contain whitespace!");
+            mEdtPwd.requestFocus();
+            return false;
+        }
+
+        if (!confirmPassword.equals(password)) {
+            mEdtConfirmPwd.setError("Password not match!");
+            mEdtConfirmPwd.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 }
