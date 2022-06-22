@@ -5,10 +5,12 @@
       <map>
         <entry key="app/src/main/res/drawable/cursor.xml" value="0.102" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.102" />
+        <entry key="app/src/main/res/layout/activity_container.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_product_specification.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_shopping_cart.xml" value="0.1" />
@@ -18,6 +20,8 @@
         <entry key="app/src/main/res/layout/layout_navigation_drawer_header.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_navigation_follow_us.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_product.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_top_sell.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/navigation_drawer.xml" value="0.1" />
         <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.1" />
       </map>
     </option>

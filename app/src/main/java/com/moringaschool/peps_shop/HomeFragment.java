@@ -16,6 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import me.relex.circleindicator.CircleIndicator3;
+
 /**
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
@@ -89,15 +94,15 @@ public class HomeFragment extends Fragment {
         return products;
     }
 
-    private List<SliderItem> initSliderItems() {
-        List<SliderItem> items = new ArrayList<>();
-
-        items.add(new SliderItem(R.drawable.slider_1));
-        items.add(new SliderItem(R.drawable.slider_2));
-        items.add(new SliderItem(R.drawable.slider_3));
-
-        return items;
-    }
+//    private List<SliderItem> initSliderItems() {
+//        List<SliderItem> items = new ArrayList<>();
+//
+//        items.add(new SliderItem(R.drawable.slider_1));
+//        items.add(new SliderItem(R.drawable.slider_2));
+//        items.add(new SliderItem(R.drawable.slider_3));
+//
+//        return items;
+//    }
 
     private void initSliderViewPager() {
         SliderAdapter sliderAdapter = new SliderAdapter(sliderItems);

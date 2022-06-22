@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class SliderAdapter  extends RecyclerView.Adapter<SliderAdapter.SliderViewHolder> {
     private final List<SliderItem> sliderItems;
 

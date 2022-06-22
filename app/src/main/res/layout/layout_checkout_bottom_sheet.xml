@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/in_stock"
+        android:text="in stock"
         app:layout_constraintBottom_toBottomOf="@+id/order_product_img"
         app:layout_constraintEnd_toEndOf="@+id/order_product_price"
         app:layout_constraintHorizontal_bias="0.0"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="@string/quantity"
+        android:text="quantity"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/divider3" />
@@ -131,7 +131,7 @@
         android:background="@drawable/order_quantity_border"
         android:gravity="center"
         android:inputType="number"
-        android:text="@string/default_quantity"
+        android:text="default quantity"
         android:textColor="@color/secondaryColor"
         android:textSize="14dp"
         android:fontFamily="@font/roboto"
@@ -161,9 +161,9 @@
             android:backgroundTint="@color/secondaryColor"
             android:fontFamily="@font/roboto"
             android:padding="8dp"
-            android:text="@string/buy_now"
+            android:text="buy now"
             android:textAllCaps="false"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

@@ -144,3 +144,4 @@ public class Product implements Serializable {
         double discountPrice = getPrice() + (getPrice() * (getDiscount() / 100));
         return "đ " + new DecimalFormat("#,###").format(discountPrice);
     }
+}

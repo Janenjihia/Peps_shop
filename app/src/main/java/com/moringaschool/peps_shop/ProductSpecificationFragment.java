@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class ProductSpecificationFragment extends Fragment {
@@ -15,7 +16,11 @@ public class ProductSpecificationFragment extends Fragment {
     private TextView cpu, os, ram, gpu, monitor,
             hardDrive, gate, keyboard, battery, weight;
 
-    public ProductSpecificationsFragment(Product product) {
+    public void ProductSpecificationsFragment() {
+        ProductSpecificationsFragment();
+    }
+
+    public void ProductSpecificationsFragment(Product product) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(ProductDetailFragment.PRODUCT_DETAIL_KEY, product);
         setArguments(bundle);
@@ -26,15 +31,15 @@ public class ProductSpecificationFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View productSpecificationView = inflater.inflate(
-                R.layout.fragment_product_specifications, container, false);
+                R.layout.fragment_product_specification, container, false);
 
         initUI(productSpecificationView);
 
         if (getArguments() != null) {
             Product product = (Product) getArguments()
                     .getSerializable(ProductDetailFragment.PRODUCT_DETAIL_KEY);
-            if (product != null)
-                setUIData(product);
+            if (product != null) {
+            }
         }
 
         return productSpecificationView;
@@ -52,18 +57,18 @@ public class ProductSpecificationFragment extends Fragment {
         battery = productSpecificationView.findViewById(R.id.product_specification_battery);
         weight = productSpecificationView.findViewById(R.id.product_specification_weight);
     }
-
-    @SuppressLint("DefaultLocale")
-    private void setUIData(Product product) {
-        cpu.setText(product.getSpecification().getCpu());
-        os.setText(product.getSpecification().getOs());
-        ram.setText(product.getSpecification().getRam());
-        gpu.setText(product.getSpecification().getGpu());
-        monitor.setText(product.getSpecification().getMonitor());
-        hardDrive.setText(product.getSpecification().getHardDrive());
-        gate.setText(product.getSpecification().getConnectionGate());
-        keyboard.setText(product.getSpecification().getKeyboard());
-        battery.setText(product.getSpecification().getBattery());
-        weight.setText(String.format("%f Kg", product.getSpecification().getWeight()));
-    }
+//
+//    @SuppressLint("DefaultLocale")
+//    private void setUIData(Product product) {
+//        cpu.setText(product.getSpecification().getCpu());
+//        os.setText(product.getSpecification().getOs());
+//        ram.setText(product.getSpecification().getRam());
+//        gpu.setText(product.getSpecification().getGpu());
+//        monitor.setText(product.getSpecification().getMonitor());
+//        hardDrive.setText(product.getSpecification().getHardDrive());
+//        gate.setText(product.getSpecification().getConnectionGate());
+//        keyboard.setText(product.getSpecification().getKeyboard());
+//        battery.setText(product.getSpecification().getBattery());
+//        weight.setText(String.format("%f Kg", product.getSpecification().getWeight()));
+//    }
 }

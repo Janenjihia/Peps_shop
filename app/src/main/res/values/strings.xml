@@ -12,4 +12,14 @@
     <string name="password">Password</string>
     <string name="have_an_account">Have An Account?</string>
     <string name="sign_up">Sign Up</string>
+    <string name="in_stock">in stock</string>
+    <string name="description">Description:</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="specifications">Specifications:</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="money_back">money back</string>
+    <string name="nav_setting">nav setting</string>
+    <string name="nav_information">nav information</string>
+    <string name="nav_log_out">nav log out</string>
+    <string name="jane_gmail_com">jane@gmail.com</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize"
-    tools:context=".fragment.ShoppingCartFragment">
+    tools:context=".ShoppingCartFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
-                android:text="@string/sub_total"
+                android:text="sub total"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
                 android:gravity="end"
                 android:maxWidth="250dp"
                 android:maxLines="1"
-                android:text="@string/default_charge"
+                android:text="default charge"
                 app:layout_constraintBottom_toBottomOf="@+id/textView5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto"
-                android:text="@string/delivery_charge"
+                android:text="delivery charge"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -70,7 +70,7 @@
                 android:ellipsize="end"
                 android:maxWidth="250dp"
                 android:maxLines="1"
-                android:text="@string/default_charge"
+                android:text="default charge"
                 app:layout_constraintBottom_toBottomOf="@+id/textView8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto"
-                android:text="@string/total"
+                android:text="total"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
                 android:fontFamily="@font/roboto"
                 android:maxWidth="250dp"
                 android:maxLines="1"
-                android:text="@string/default_charge"
+                android:text="default charge"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/textView11"
                 app:layout_constraintEnd_toEndOf="parent"

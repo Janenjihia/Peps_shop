@@ -2,6 +2,7 @@ package com.moringaschool.peps_shop;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Build;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -14,14 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hisu.hisumal.R;
-import com.hisu.hisumal.entity.Product;
-import com.hisu.hisumal.fragment.ShoppingCartFragment;
-import com.hisu.hisumal.myInterface.ICheckBoxChangedListener;
-import com.hisu.hisumal.util.ImageConverterHelper;
+
 
 import org.jetbrains.annotations.NotNull;
 
@@ -120,6 +118,7 @@ public class CartItemAdapter extends RecyclerView.Adapter<CartItemAdapter.CartIt
                 .setPositiveButton("Ok", null).show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void toggleAllCheckBox(boolean isChecked) {
         cartItemViewHolders.forEach(holder -> {
             holder.itemCheckBox.setChecked(isChecked);

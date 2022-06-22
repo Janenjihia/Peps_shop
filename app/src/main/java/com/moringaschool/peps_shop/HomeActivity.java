@@ -1,6 +1,30 @@
 package com.moringaschool.peps_shop;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import com.moringaschool.peps_shop.R;
+
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.badge.BadgeUtils;
+import com.google.android.material.navigation.NavigationView;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
@@ -25,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         initUI();
-        initNavigationDrawer();
+//        initNavigationDrawer();
 
         for (int i = 0; i < socialMedia.length; i++) {
             int finalI = i;
@@ -58,21 +82,22 @@ public class HomeActivity extends AppCompatActivity {
         mFragmentContainer = findViewById(R.id.homepage_fragment_container);
     }
 
-    private void initNavigationDrawer() {
-        setSupportActionBar(mToolbar);
-        ActionBar mActionBar = getSupportActionBar();
-
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
-                R.string.open_navigation_drawer, R.string.close_navigation_drawer);
-
-        mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-
-        //Change NavigationView Toggle drawable icon
-        mActionBar.setHomeButtonEnabled(true);
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setHomeAsUpIndicator(R.drawable.ic_menubar);
-    }
+//    private void initNavigationDrawer() {
+//        setSupportActionBar(mToolbar);
+//        ActionBar mActionBar = getSupportActionBar();
+//
+////        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,mToolbar)
+////        R.string.nav_log_out);
+//
+//
+//        mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
+//
+//        //Change NavigationView Toggle drawable icon
+//        mActionBar.setHomeButtonEnabled(true);
+//        mActionBar.setDisplayHomeAsUpEnabled(true);
+//        mActionBar.setHomeAsUpIndicator(R.drawable.ic_menubar);
+//    }
 
     private void openApp(String appName) {
         Toast.makeText(this, appName, Toast.LENGTH_SHORT).show();

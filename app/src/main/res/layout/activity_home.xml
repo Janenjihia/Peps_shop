@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HomeActivity"
+    tools:context=".HomeActivity"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -35,12 +35,12 @@
                     android:ellipsize="start"
                     android:fontFamily="@font/roboto"
                     android:hint="Search..."
-                    android:maxLines="1"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="6dp"
                     android:textColor="@color/textColor"
                     android:textCursorDrawable="@drawable/search_cursor"
-                    android:textSize="19dp" />
+                    android:textSize="19dp"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"

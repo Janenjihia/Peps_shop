@@ -9,6 +9,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "HMal_DB";
     private static AppDatabase INSTANCE;
+
     public abstract ProductDAO productDAO();
 
     public static AppDatabase getInstance(Context context) {
@@ -21,3 +22,4 @@ public abstract class AppDatabase extends RoomDatabase {
     public static void closeConnection() {
         if (INSTANCE != null) INSTANCE.close();
     }
+}
