@@ -14,4 +14,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#504E4E</color>
+    <color name= "cyan">#E8EFF2</color>
+    <color name="blue_magenta">#0C0C0D</color>
+    <color name="dark_shade_cyan">#103c38</color>
+    <color name="shade">#cacddc</color>
+    <color name="green">#d5e8e6</color>
+    <color name="charcoal">#c3c3c3</color>
+    <color name="baby">#81d5dd</color>
 </resources>

@@ -2,4 +2,8 @@
     <string name="app_name">Peps_shop</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t Have An Account?</string>
+    <string name="forgot_passwordd">forgot passwordd</string>
+    <string name="login_user_name">Login User Name</string>
 </resources>
