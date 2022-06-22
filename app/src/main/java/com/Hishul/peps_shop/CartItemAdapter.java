@@ -29,12 +29,12 @@ import java.util.List;
 public class CartItemAdapter extends RecyclerView.Adapter<CartItemAdapter.CartItemViewHolder> {
 
     private final Context context;
-    private final List<Product> productList;
+    private final List<com.moringaschool.peps_shop.Product> productList;
     private final List<CartItemViewHolder> cartItemViewHolders;
-    private final ICheckBoxChangedListener checkBoxChangedListener;
-    private final ShoppingCartFragment cartFragment;
+    private final com.moringaschool.peps_shop.ICheckBoxChangedListener checkBoxChangedListener;
+    private final com.moringaschool.peps_shop.ShoppingCartFragment cartFragment;
 
-    public CartItemAdapter(Context context, List<Product> productList, ICheckBoxChangedListener checkBoxChangedListener) {
+    public CartItemAdapter(Context context, List<com.moringaschool.peps_shop.Product> productList, ICheckBoxChangedListener checkBoxChangedListener) {
         this.context = context;
         this.productList = productList;
         cartItemViewHolders = new ArrayList<>();
