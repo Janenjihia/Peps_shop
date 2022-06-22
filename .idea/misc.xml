@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/cursor.xml" value="0.102" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.102" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.15364583333333334" />
       </map>
     </option>
   </component>
